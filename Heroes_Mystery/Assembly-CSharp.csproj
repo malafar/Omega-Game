@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Heroes_Mystery\Test_Area\Manu\GRID\Scripts\FollowPath.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Test_Area\Manu\GRID\Scripts\GridBehaviour.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Test_Area\Manu\GRID\Scripts\GridStat.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Attributes\MinMaxRangeAttribute.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Enums\Language.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Enums\Module.cs" />
