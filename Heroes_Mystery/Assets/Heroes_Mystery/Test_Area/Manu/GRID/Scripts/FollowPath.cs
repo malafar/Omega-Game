@@ -3,36 +3,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPath : MonoBehaviour
-{
-    public bool startPosition = false;
-    public bool followingActivated = false;
-    public GridBehaviour gridManager;
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (gridManager.path.Count > 0) {
-            transform.position = gridManager.path[0].transform.position;
+/// <summary>
+/// Clase encargada de la mecánica del seguimiento de caminos de los jugadores.
+/// </summary>
+public class FollowPath : MonoBehaviour {
+
+    /// <summary>
+    /// Variable para indicar si se quiere situar en la variable de inicio. TEMPORAL, para comenzar las pruebas hasta que se tenga la salida oficial.
+    /// </summary>
+    public bool goToStarPosition = false;
+
+    /// <summary>
+    /// Tiempo para pasar de una casilla a otra.
+    /// </summary>
+    public float timeForStep = 0.3f;
+
+    /// <summary>
+    /// Coordenada x de la posición en la que se encuentra.
+    /// </summary>
+    public int posStartX = 0;
+
+    /// <summary>
+    /// Coordenada y de la posición en la que se encuentra.
+    /// </summary>
+    public int posStartY = 0;
+
+    void Update() {
+        if (goToStarPosition) {
+            goToStarPosition = false;
+            GridManager gridManager = GameManager.getGridManager();
+            if (gridManager.getGridPosition(posStartX, posStartY)) {
+                transform.position = gridManager.getGridPosition(posStartX, posStartY).transform.position;
+                gridManager.setStartOfPath(posStartX, posStartY);
+            }
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (startPosition) {
-            if (gridManager.path.Count > 0) {
-                transform.position = gridManager.path[0].transform.position;
+    /// <summary>
+    /// Método que hace que se siga el path calculado. También cambia la posición de inicio para
+    /// la siguiente iteración.
+    /// </summary>
+    public void followPath() {
+        if (gameObject.GetComponent<Player>().isCurrentPlayer()) {
+            GridManager gridManager = GameManager.getGridManager();
+            int pathTam = gridManager.getPathCount();
+            Vector3[] tempPath = new Vector3[pathTam];
+            for (int i = 0; i < pathTam; i++) {
+                tempPath[i] = gridManager.getPathPosition(i).transform.position;
             }
-            startPosition = false;
-        }
+            transform.DOPath(tempPath, pathTam * timeForStep);
 
-        if (followingActivated) {
-            followingActivated = false;
-            Vector3[] tempPath = new Vector3[gridManager.path.Count];
-            for(int i = 0; i < gridManager.path.Count; i++) {
-                tempPath[i] = gridManager.path[i].transform.position;            
-            }
-            transform.DOPath(tempPath, 4);
+            posStartX = gridManager.getEndX();
+            posStartY = gridManager.getEndY();
+
+            gridManager.setStartOfPath(posStartX, posStartY);
         }
     }
 }
