@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Imports/Rewired/Rewired/Examples/PlayerMouseUnityUI/PlayerMouseUnityUI.unity
+- path: Assets/Heroes_Mystery/Scenes/Juego.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

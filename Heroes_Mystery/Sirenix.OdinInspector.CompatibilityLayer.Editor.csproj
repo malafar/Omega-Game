@@ -298,15 +298,6 @@
     <Reference Include="DOTweenEditor">
       <HintPath>C:/Users/Manu/Documents/Unity/Heroes-Mystery/Heroes_Mystery/Assets/Imports/DOTween/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
-    <Reference Include="cssparse.net">
-      <HintPath>C:/Users/Manu/Documents/Unity/Heroes-Mystery/Heroes_Mystery/Assets/Imports/Happy_Fun_Times/Plugins/cssparse.net.dll</HintPath>
-    </Reference>
-    <Reference Include="DeJson">
-      <HintPath>C:/Users/Manu/Documents/Unity/Heroes-Mystery/Heroes_Mystery/Assets/Imports/Happy_Fun_Times/Plugins/DeJson.dll</HintPath>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>C:/Users/Manu/Documents/Unity/Heroes-Mystery/Heroes_Mystery/Assets/Imports/Happy_Fun_Times/Plugins/websocket-sharp.dll</HintPath>
-    </Reference>
     <Reference Include="Sirenix.OdinInspector.Attributes">
       <HintPath>C:/Users/Manu/Documents/Unity/Heroes-Mystery/Heroes_Mystery/Assets/Imports/Odin/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
     </Reference>
