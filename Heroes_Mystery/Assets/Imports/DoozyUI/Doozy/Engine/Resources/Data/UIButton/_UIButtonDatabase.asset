@@ -17,6 +17,12 @@ MonoBehaviour:
   - Custom
   - Example
   - General
+  - MainMenu
+  - MainMenu_Settings
+  - MainMenu_Instructions
   Categories:
   - {fileID: 11400000, guid: 40f9e81ff80114a47a3721228ba749ed, type: 2}
   - {fileID: 11400000, guid: 00ce8def1dcb276408edecb3a75288a9, type: 2}
+  - {fileID: 11400000, guid: 0dc9f277b48857447a4ef35dabe13853, type: 2}
+  - {fileID: 11400000, guid: 5e1153109887a4148878309b60211190, type: 2}
+  - {fileID: 11400000, guid: a738deaf85e69d74caf0c842b9a36d48, type: 2}

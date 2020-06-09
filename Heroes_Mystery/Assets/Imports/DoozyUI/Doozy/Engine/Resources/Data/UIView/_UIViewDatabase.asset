@@ -17,6 +17,10 @@ MonoBehaviour:
   - Custom
   - Example
   - General
+  - Main
+  - MainSettings_categories
   Categories:
   - {fileID: 11400000, guid: b01e98f4801f7124ba39e1dac4debf90, type: 2}
   - {fileID: 11400000, guid: 8bce6d2d7f443564b93677b9939695fb, type: 2}
+  - {fileID: 11400000, guid: 69d981050b381e045bc38f0498118ec6, type: 2}
+  - {fileID: 11400000, guid: 4c2670eefb0e96b468f4d94953c68c33, type: 2}

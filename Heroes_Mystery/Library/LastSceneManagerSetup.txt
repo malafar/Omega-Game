@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Heroes_Mystery/Scenes/Juego.unity
+- path: Assets/Heroes_Mystery/Test_Area/Salva/UI/Game.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
