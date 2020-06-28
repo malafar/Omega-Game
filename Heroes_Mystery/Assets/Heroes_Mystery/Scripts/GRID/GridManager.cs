@@ -1,35 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 /// <summary>
 /// Clase destinada al comportamiento de la IA en cuanto al pathfinding.
 /// </summary>
-public class GridManager : MonoBehaviour {
+public class GridManager : SerializedMonoBehaviour {
     /// <summary>
-    /// Filas de la matriz.
+    /// Matriz booleana para indicar casillas de tipo pasillo.
     /// </summary>
-    public int rows = 24;
-
-    /// <summary>
-    /// Columnas de la matriz.
-    /// </summary>
-    public int columns = 22;
-
-    /// <summary>
-    /// Escala de separación entre los nodos de las casillas.
-    /// </summary>
-    public float scale = 0.815f;
+	[TableMatrix(HorizontalTitle = "Casillas Pasillo", SquareCells = true)]
+	public bool[,] casillasPasillo = new bool[60,24];
 
     /// <summary>
     /// Objeto usado para detectar las posiciones en el grid.
     /// </summary>
     public GameObject gridPrefab;
+	
+	/// <summary>
+    /// Filas de la matriz.
+    /// </summary>
+    private int rows = 24;
 
     /// <summary>
-    /// Posición en la que se encuentra la esquina inferior izquierda.
+    /// Columnas de la matriz.
     /// </summary>
-    public Vector2 leftBottomLocation = new Vector2(0, 0);
+    private int columns = 60;
+
+    /// <summary>
+    /// Escala de separación entre los nodos de las casillas.
+    /// </summary>
+    private float scale = 0.3f;
+
+    /// <summary>
+    /// Posición en la que se encuentra la esquina superior izquierda.
+    /// </summary>
+    private Vector2 leftUpLocation = new Vector2(0, 0);
 
     /// <summary>
     /// Matriz de casillas del grid.
@@ -66,7 +73,7 @@ public class GridManager : MonoBehaviour {
         if (gridPrefab) {
             generateGrid();
         } else {
-            Debug.LogError("Missing grid prefab, please assign.");
+            Debug.LogError("Falta añadir un prefab para las casillas.");
         }
 
         GameManager.setGridManager(gameObject.GetComponent<GridManager>());
@@ -78,6 +85,20 @@ public class GridManager : MonoBehaviour {
     private void generateGrid() {
         for (int i = 0; i < columns; i++) {
             for (int j = 0; j < rows; j++) {
+                if(casillasPasillo[i, j]){
+					GameObject posGrid = Instantiate(gridPrefab);
+					posGrid.transform.position = new Vector2(leftUpLocation.x + scale * i, leftUpLocation.y - scale * j);
+					posGrid.transform.SetParent(gameObject.transform);
+					GridStat posGridStat = posGrid.GetComponent<GridStat>();
+					posGridStat.setCoordenates(i, j);
+
+					gridArray[i, j] = posGrid;	
+				}
+            }
+        }
+		/*
+		for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
                 GameObject posGrid = Instantiate(gridPrefab);
                 posGrid.transform.position = new Vector2(leftBottomLocation.x + scale * i, leftBottomLocation.y + scale * j);
                 posGrid.transform.SetParent(gameObject.transform);
@@ -87,6 +108,7 @@ public class GridManager : MonoBehaviour {
                 gridArray[i, j] = posGrid;
             }
         }
+		*/
     }
 
     /// <summary>
@@ -111,10 +133,12 @@ public class GridManager : MonoBehaviour {
 
         for (int step = 1; step < testArray.Length; step++) {
             foreach (GameObject posGrid in gridArray) {
-                GridStat posGridStat = posGrid.GetComponent<GridStat>();
-                if (posGrid && posGridStat.getVisited() == step - 1) {
-                    testFourDirections(posGridStat.getX(), posGridStat.getY(), step);
-                }
+                if(posGrid){
+					GridStat posGridStat = posGrid.GetComponent<GridStat>();
+					if (posGrid && posGridStat.getVisited() == step - 1) {
+						testFourDirections(posGridStat.getX(), posGridStat.getY(), step);
+					}
+				}
             }
         }
     }
