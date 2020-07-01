@@ -96,19 +96,6 @@ public class GridManager : SerializedMonoBehaviour {
 				}
             }
         }
-		/*
-		for (int i = 0; i < columns; i++) {
-            for (int j = 0; j < rows; j++) {
-                GameObject posGrid = Instantiate(gridPrefab);
-                posGrid.transform.position = new Vector2(leftBottomLocation.x + scale * i, leftBottomLocation.y + scale * j);
-                posGrid.transform.SetParent(gameObject.transform);
-                GridStat posGridStat = posGrid.GetComponent<GridStat>();
-                posGridStat.setCoordenates(i, j);
-
-                gridArray[i, j] = posGrid;
-            }
-        }
-		*/
     }
 
     /// <summary>
