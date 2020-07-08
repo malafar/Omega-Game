@@ -63,11 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Heroes_Mystery\Scripts\GRID\CasillaStat.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\GRID\FollowPath.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\GRID\GameManager.cs" />
-    <Compile Include="Assets\Heroes_Mystery\Scripts\GRID\GridManager.cs" />
-    <Compile Include="Assets\Heroes_Mystery\Scripts\GRID\GridStat.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\GRID\GameManager_Config.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\GRID\PasillosManager.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\GRID\Player.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\GRID\PuertasManager.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Attributes\MinMaxRangeAttribute.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Enums\Language.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Enums\Module.cs" />

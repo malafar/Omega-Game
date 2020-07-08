@@ -31,7 +31,7 @@ public class FollowPath : MonoBehaviour {
     void Update() {
         if (goToStarPosition) {
             goToStarPosition = false;
-            GridManager gridManager = GameManager.getGridManager();
+            PasillosManager gridManager = GameManager.getPasillosManager();
             if (gridManager.getGridPosition(posStartX, posStartY)) {
                 transform.position = gridManager.getGridPosition(posStartX, posStartY).transform.position;
                 gridManager.setStartOfPath(posStartX, posStartY);
@@ -45,7 +45,7 @@ public class FollowPath : MonoBehaviour {
     /// </summary>
     public void followPath() {
         if (gameObject.GetComponent<Player>().isCurrentPlayer()) {
-            GridManager gridManager = GameManager.getGridManager();
+            PasillosManager gridManager = GameManager.getPasillosManager();
             int pathTam = gridManager.getPathCount();
             Vector3[] tempPath = new Vector3[pathTam];
             for (int i = 0; i < pathTam; i++) {

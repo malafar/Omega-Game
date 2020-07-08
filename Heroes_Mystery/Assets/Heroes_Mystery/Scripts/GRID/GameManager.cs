@@ -8,9 +8,9 @@ using UnityEngine;
 /// </summary>
 public class GameManager : MonoBehaviour {
     /// <summary>
-    /// Mánager del grid en la partida.
+    /// Mánager del tablero en la partida.
     /// </summary>
-    private static GridManager gridManager;
+    private static GameObject tableroManager;
 
     /// <summary>
     /// Jugador actual.
@@ -18,19 +18,39 @@ public class GameManager : MonoBehaviour {
     private static GameObject currentPlayer;
 
     /// <summary>
-    /// Getter del mánager del grid.
+    /// Getter del mánager del tablero.
     /// </summary>
-    /// <returns>Mánager del grid.</returns>
-    public static GridManager getGridManager() {
-        return gridManager;
+    /// <returns>Mánager del tablero.</returns>
+    public static GameObject getTableroManager() {
+        return tableroManager;
     }
 
     /// <summary>
-    /// Setter del mánager del grid.
+    /// Setter del mánager del tablero.
     /// </summary>
-    /// <param name="gManager">Nuevo mánager del grid.</param>
-    public static void setGridManager(GridManager gManager) {
-        gridManager = gManager;
+    /// <param name="gManager">Nuevo mánager del tablero.</param>
+    public static void setTableroManager(GameObject tManager) {
+        tableroManager = tManager;
+
+        if (tableroManager) {
+            getPasillosManager().setPuertasManager(getPuertasManager());
+        }
+    }
+
+    /// <summary>
+    /// Getter del mánager del pasillo.
+    /// </summary>
+    /// <returns>Mánager del pasillo.</returns>
+    public static PasillosManager getPasillosManager() {
+        return tableroManager.GetComponent<PasillosManager>();
+    }
+
+    /// <summary>
+    /// Getter del mánager de las puertas.
+    /// </summary>
+    /// <returns>Mánager de las puertas.</returns>
+    public static PuertasManager getPuertasManager() {
+        return tableroManager.GetComponent<PuertasManager>();
     }
 
     /// <summary>
