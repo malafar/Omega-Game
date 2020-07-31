@@ -22,6 +22,15 @@ public class CasillaStat : MonoBehaviour
     /// </summary>
     private bool door = false;
 
+    /// <summary>
+    /// Constructor por parámetros de una casilla.
+    /// </summary>
+    /// <param name="x">Coordenada X de la casilla.</param>
+    /// <param name="y">Coordenada Y de la casilla.</param>
+    public CasillaStat(int x, int y) {
+        coordenada.setCoordenates(x, y);
+    }
+
     private void OnMouseUp() {
         PasillosManager gridManager = GameManager.getPasillosManager();
         if (gridManager) {

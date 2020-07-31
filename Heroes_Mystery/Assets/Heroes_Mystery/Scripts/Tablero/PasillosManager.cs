@@ -69,7 +69,7 @@ public class PasillosManager : SerializedMonoBehaviour {
     public void generateTablero() {
         gridArray = new GameObject[columns, rows];
         if (gridPrefab) {
-            generatePasillos();
+            generateCasillas();
         } else {
             Debug.LogError("Falta añadir un prefab para las casillas.");
         }
@@ -78,7 +78,9 @@ public class PasillosManager : SerializedMonoBehaviour {
     /// <summary>
     /// Método que genera el grid para usar en el tablero.
     /// </summary>
-    private void generatePasillos() {
+    private void generateCasillas() {
+        puertasManager.loadPuertas();
+
         for (int i = 0; i < columns; i++) {
             for (int j = 0; j < rows; j++) {
                 if(casillasPasillo[i, j]){
@@ -92,8 +94,6 @@ public class PasillosManager : SerializedMonoBehaviour {
 				}
             }
         }
-
-        puertasManager.configPuertas();
     }
 
     /// <summary>

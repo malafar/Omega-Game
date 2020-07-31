@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Coordenada {
@@ -63,8 +64,22 @@ public class Coordenada {
         y = newY;
     }
 
+    /// <summary>
+    /// Método encargado de la asignación de las coordenadas de la puerta.
+    /// </summary>
+    /// <param name="newX">Nuevo valor para el eje X.</param>
+    /// <param name="newY">Nuevo valor para el eje Y.</param>
     public void setCoordenates(int newX, int newY) {
         x = newX;
         y = newY;
+    }
+
+    /// <summary>
+    /// Método que compara la coordenada actual con otra.
+    /// </summary>
+    /// <param name="other">Coordenada con la que se compara.</param>
+    /// <returns>TRUE en caso de que sean la misma; FALSE en caso contrario.</returns>
+    public bool compareTo(Coordenada other) {
+        return x == other.getX() && y == other.getY();
     }
 }
