@@ -65,14 +65,15 @@
   <ItemGroup>
     <Compile Include="Assets\Heroes_Mystery\Scripts\Genérico\Coordenada.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Genérico\Orientacion.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Genérico\Tipo_Casilla.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\CasillaStat.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\FollowPath.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\GameManager.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\GameManager_Config.cs" />
-    <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\PasillosManager.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\Player.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\PuertasManager.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\PuertaStat.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\TableroManager.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Attributes\MinMaxRangeAttribute.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Enums\Language.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Enums\Module.cs" />

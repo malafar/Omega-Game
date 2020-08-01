@@ -18,21 +18,23 @@ public class CasillaStat : MonoBehaviour
     private Coordenada coordenada = new Coordenada();
 
     /// <summary>
-    /// Variable booleana que indica si la casilla es una puerta.
+    /// Variable que indica el tipo de la casilla.
     /// </summary>
-    private bool door = false;
+    private Tipo_Casilla tipo;
 
     /// <summary>
-    /// Constructor por parámetros de una casilla.
+    /// Método para inicializar los stats comunes de una casilla.
     /// </summary>
     /// <param name="x">Coordenada X de la casilla.</param>
     /// <param name="y">Coordenada Y de la casilla.</param>
-    public CasillaStat(int x, int y) {
+    /// <param name="t">Tipo de casilla.</param>
+    public void initCasilla(int x, int y, Tipo_Casilla t) {
         coordenada.setCoordenates(x, y);
+        setTipo(t);
     }
 
     private void OnMouseUp() {
-        PasillosManager gridManager = GameManager.getPasillosManager();
+        TableroManager gridManager = GameManager.getPasillosManager();
         if (gridManager) {
             gridManager.setEndOfPath(coordenada.getX(), coordenada.getY());
             gridManager.generatePath();
@@ -81,17 +83,18 @@ public class CasillaStat : MonoBehaviour
     }
 
     /// <summary>
-    /// Getter que nos dice si la casilla es una puerta.
+    /// Getter del tipo de la casilla.
     /// </summary>
-    /// <returns>True si es puerta; False si no lo es.</returns>
-    public bool isDoor() {
-        return door;
+    /// <returns>Tipo de la casilla.</returns>
+    public Tipo_Casilla getTipo() {
+        return tipo;
     }
 
     /// <summary>
-    /// Método que hace que una casilla sea además una puerta.
+    /// Setter del tipo de la casilla.
     /// </summary>
-    public void makeDoor() {
-        door = true;
+    /// <param name="newTipo">Nuevo tipo de la casilla.</param>
+    public void setTipo(Tipo_Casilla newTipo) {
+        tipo = newTipo;
     }
 }

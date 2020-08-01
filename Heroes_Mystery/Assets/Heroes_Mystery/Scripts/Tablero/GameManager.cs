@@ -42,8 +42,8 @@ public class GameManager : MonoBehaviour {
     /// Getter del mánager del pasillo.
     /// </summary>
     /// <returns>Mánager del pasillo.</returns>
-    public static PasillosManager getPasillosManager() {
-        return tableroManager.GetComponent<PasillosManager>();
+    public static TableroManager getPasillosManager() {
+        return tableroManager.GetComponent<TableroManager>();
     }
 
     /// <summary>

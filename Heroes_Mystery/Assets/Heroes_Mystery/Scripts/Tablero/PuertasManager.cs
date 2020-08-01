@@ -9,33 +9,36 @@ public class PuertasManager : SerializedMonoBehaviour {
     /// <summary>
     /// Lista de puertas del tablero.
     /// </summary>
-    private List< Tuple <Coordenada, Orientacion> > puertas = new List<Tuple<Coordenada, Orientacion>>();
+    private List<Tuple<Coordenada, Orientacion>> puertas;
 
     /// <summary>
     /// Fichero que contiene los datos de coordenadas y orientación de todas las puertas.
     /// </summary>
-    public string doorsData;
+    private string doorsData = "Assets/Heroes_Mystery/Ficheros/doorsData.txt";
 
     /// <summary>
     /// Método que carga los datos de las puertas desde el fichero de datos a la estructura correspondiente.
     /// </summary>
     public void loadPuertas() {
+        puertas = new List<Tuple<Coordenada, Orientacion>>();
         // Lectura de datos
         try {
-            StreamReader lector = new StreamReader(doorsData);
+            StreamReader fichero = File.OpenText(doorsData);
             string puerta;
 
-            using (lector) {
-                while(lector.Peek() > -1) {
-                    puerta = lector.ReadLine();
+            using (fichero) {
+                do {
+                    puerta = fichero.ReadLine();
 
                     if (!String.IsNullOrEmpty(puerta)) {
                         string[] stats = puerta.Split(';');
 
                         addPuerta(stats);
                     }
-                }
+                } while (puerta != null);
             }
+
+            fichero.Close();
         }catch(Exception ex) {
             Debug.LogError(ex.StackTrace);
         }
@@ -113,5 +116,13 @@ public class PuertasManager : SerializedMonoBehaviour {
         }
 
         return -1;
+    }
+
+    /// <summary>
+    /// Método que devuelve el número de puertas.
+    /// </summary>
+    /// <returns>Número de puertas.</returns>
+    public int getDoorsCount() {
+        return puertas.Count;
     }
 }

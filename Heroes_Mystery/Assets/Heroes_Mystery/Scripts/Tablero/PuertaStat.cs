@@ -10,12 +10,14 @@ public class PuertaStat : CasillaStat {
     private Orientacion orientacion;
 
     /// <summary>
-    /// Constructor por parámetros de una casilla de tipo puerta.
+    /// Método para inicializar los stats de una casilla de tipo puerta.
     /// </summary>
     /// <param name="x">Coordenada X de la puerta.</param>
     /// <param name="y">Coordeanda Y de la puerta.</param>
+    /// <param name="t">Tipo de casilla.</param>
     /// <param name="sentido">Orientación de la puerta.</param>
-    public PuertaStat(int x, int y, Orientacion sentido) : base(x, y) {
+    public void initCasilla(int x, int y, Tipo_Casilla t, Orientacion sentido) {
+        initCasilla(x, y, t);
         orientacion = sentido;
     }
 
