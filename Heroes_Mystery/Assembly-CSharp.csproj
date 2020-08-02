@@ -64,16 +64,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Heroes_Mystery\Scripts\Genérico\Coordenada.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Genérico\Nombre_Escenario.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Genérico\Orientacion.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Genérico\Tipo_Casilla.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Managers\EscenariosManager.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Managers\GameManager_Config.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Managers\PuertasManager.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Managers\TableroManager.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Player\FollowPath.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\CasillaStat.cs" />
-    <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\FollowPath.cs" />
-    <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\GameManager.cs" />
-    <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\GameManager_Config.cs" />
-    <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\Player.cs" />
-    <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\PuertasManager.cs" />
+    <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\EscenarioStat.cs" />
     <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\PuertaStat.cs" />
-    <Compile Include="Assets\Heroes_Mystery\Scripts\Tablero\TableroManager.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Attributes\MinMaxRangeAttribute.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Enums\Language.cs" />
     <Compile Include="Assets\Imports\DoozyUI\Doozy\Engine\Enums\Module.cs" />
@@ -424,6 +427,7 @@
     <None Include="Assets\Imports\DoozyUI\Doozy\Examples\Fonts\Codystar\OFL.txt" />
     <None Include="Assets\Imports\DoozyUI\Doozy\Examples\Fonts\Luckiest_Guy\LICENSE.txt" />
     <None Include="Assets\Imports\DoozyUI\Doozy\Examples\Fonts\Bangers\OFL.txt" />
+    <None Include="Assets\Heroes_Mystery\Ficheros\escenariosData.txt" />
     <None Include="Assets\Imports\DOTween\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\Imports\DoozyUI\Doozy\Examples\Fonts\Permanent_Marker\LICENSE.txt" />
     <None Include="Assets\Imports\DoozyUI\Doozy\Examples\Fonts\Pacifico\OFL.txt" />

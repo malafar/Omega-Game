@@ -1,3 +1,5 @@
 ﻿public enum Tipo_Casilla{
-    PASILLO, PUERTA
+    PASILLO, 
+    PUERTA,
+    ENLACE
 }
